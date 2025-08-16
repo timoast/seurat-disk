@@ -188,7 +188,7 @@ GetGraphs <- function(graphs, index, assays = NULL) {
 #' @rdname GetObject
 #'
 GetImages <- function(images, index, assays = NULL) {
-  if (isFALSE(x = images)) {
+  if (isFALSE(x = images) | is.null(x = images)) {
     return(NULL)
   } else if (!is.null(x = images) && all(is.na(x = images))) {
     return(index$global$images)
